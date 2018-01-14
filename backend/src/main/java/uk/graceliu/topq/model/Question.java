@@ -30,4 +30,6 @@ public interface Question<B extends QuestionBody, A extends Answer> {
 
     QuestionMeta getMeta();
 
+    public String getId();
+
 }

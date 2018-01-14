@@ -14,9 +14,11 @@ import org.springframework.web.context.WebApplicationContext;
 import uk.graceliu.topq.TopqApplication;
 import uk.graceliu.topq.config.EmbeddedMongoConfig;
 import uk.graceliu.topq.model.Question;
+import uk.graceliu.topq.model.QuestionMeta;
 import uk.graceliu.topq.model.choice.Choice;
 import uk.graceliu.topq.model.choice.ChoiceBody;
 import uk.graceliu.topq.model.choice.ChoiceQuestion;
+import uk.graceliu.topq.model.impl.QuestionMetaImpl;
 
 import java.nio.charset.Charset;
 import java.util.Arrays;
@@ -50,8 +52,6 @@ public class QuestionRepositoryTest {
     }
 
     public static ChoiceQuestion createTestQuestionInstance() {
-        ChoiceQuestion choiceQuestion = new ChoiceQuestion();
-        choiceQuestion.setText("Some Question Text");
 
         Choice choice1 = new Choice();
         choice1.setCorrect(true);
@@ -64,10 +64,11 @@ public class QuestionRepositoryTest {
         choice2.setIndex(2);
         choice2.setText("Nothing is wrong");
 
-        ChoiceBody choiceBody = new ChoiceBody();
-        choiceBody.setChoices(Arrays.asList(choice1, choice2));
+        ChoiceBody choiceBody = new ChoiceBody(Arrays.asList(choice1, choice2), "When is Grace Birthday?");
 
-        choiceQuestion.setBody(choiceBody);
+        QuestionMeta qm = QuestionMetaImpl.builder().difficulity(1).explaination("No need").build();
+
+        ChoiceQuestion choiceQuestion = new ChoiceQuestion(choiceBody, qm);
         return choiceQuestion;
     }
 
@@ -86,7 +87,7 @@ public class QuestionRepositoryTest {
         assertTrue(question instanceof ChoiceQuestion);
 
         ChoiceQuestion cq = (ChoiceQuestion) question;
-        assertEquals("Some Question Text", cq.getText());
+        assertEquals("When is Grace Birthday?", cq.getBody().getText());
     }
 
 
@@ -101,7 +102,7 @@ public class QuestionRepositoryTest {
 
         this.mockMvc.perform(get("/api/questions/" + createdId))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.text", is("Some Question Text")));
+                .andExpect(jsonPath("$.body.text", is("When is Grace Birthday?")));
     }
 
 }

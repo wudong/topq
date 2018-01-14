@@ -7,9 +7,11 @@ import uk.graceliu.topq.model.impl.AbstractQuestionImpl;
 
 public class ChoiceQuestion extends AbstractQuestionImpl<ChoiceBody, ChoiceAnswer>{
 
+
     public ChoiceQuestion(ChoiceBody body, QuestionMeta meta) {
         super(body, meta);
     }
+
 
     @Override
     public boolean check(ChoiceAnswer anser) {
@@ -19,5 +21,6 @@ public class ChoiceQuestion extends AbstractQuestionImpl<ChoiceBody, ChoiceAnswe
     @Override
     public void validate(ChoiceAnswer anser) {
     }
+
 
 }

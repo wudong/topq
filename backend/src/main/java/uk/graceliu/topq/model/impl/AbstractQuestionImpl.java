@@ -1,5 +1,6 @@
 package uk.graceliu.topq.model.impl;
 
+import org.springframework.data.annotation.Id;
 import uk.graceliu.topq.model.Answer;
 import uk.graceliu.topq.model.Question;
 import uk.graceliu.topq.model.QuestionBody;
@@ -16,6 +17,18 @@ public abstract class AbstractQuestionImpl<B extends QuestionBody, A extends Ans
         this.meta = meta;
     }
 
+    @Id
+    private String id;
+
+    public void setId(String id) {
+        this.id=id;
+    }
+
+    @Override
+    public String getId() {
+        return this.id;
+    }
+
     @Override
     public B getBody() {
         return body;
@@ -25,4 +38,5 @@ public abstract class AbstractQuestionImpl<B extends QuestionBody, A extends Ans
     public QuestionMeta getMeta() {
         return meta;
     }
+
 }
