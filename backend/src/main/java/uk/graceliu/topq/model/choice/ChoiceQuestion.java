@@ -2,9 +2,14 @@ package uk.graceliu.topq.model.choice;
 
 import lombok.Data;
 import uk.graceliu.topq.model.Question;
+import uk.graceliu.topq.model.QuestionMeta;
+import uk.graceliu.topq.model.impl.AbstractQuestionImpl;
 
-@Data
-public class ChoiceQuestion extends Question<ChoiceBody, ChoiceAnswer>{
+public class ChoiceQuestion extends AbstractQuestionImpl<ChoiceBody, ChoiceAnswer>{
+
+    public ChoiceQuestion(ChoiceBody body, QuestionMeta meta) {
+        super(body, meta);
+    }
 
     @Override
     public boolean check(ChoiceAnswer anser) {
@@ -13,6 +18,6 @@ public class ChoiceQuestion extends Question<ChoiceBody, ChoiceAnswer>{
 
     @Override
     public void validate(ChoiceAnswer anser) {
-
     }
+
 }

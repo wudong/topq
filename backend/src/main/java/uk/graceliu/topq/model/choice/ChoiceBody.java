@@ -1,23 +1,29 @@
 package uk.graceliu.topq.model.choice;
 
+import lombok.Data;
 import lombok.ToString;
-import org.springframework.data.annotation.PersistenceConstructor;
 import uk.graceliu.topq.model.QuestionBody;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-@ToString
+@Data
 public class ChoiceBody implements QuestionBody {
-    private List<Choice> choices = new ArrayList<Choice>();
 
-    @PersistenceConstructor
-    public ChoiceBody(List<Choice> choices) {
-        this.choices.addAll(choices);
+    final private List<Choice> choices;
+    final private String text;
+
+    public ChoiceBody(List<Choice> choices, String text) {
+        this.choices = choices;
+        this.text = text;
     }
 
-    public ChoiceBody(Choice... choices) {
-        this.choices.addAll(Arrays.asList(choices));
+    public List<Choice> getChoices() {
+        return choices;
+    }
+
+    @Override
+    public String getText() {
+        return this.text;
     }
 }

@@ -7,5 +7,20 @@ import java.util.List;
 
 @Data
 public class InputBody implements QuestionBody {
-    public List<Input> inputs;
+    final private List<Input> inputs;
+    final private String text;
+
+    public InputBody(List<Input> inputs, String text) {
+        this.inputs = inputs;
+        this.text = text;
+    }
+
+    @Override
+    public String getText() {
+        return text;
+    }
+
+    public List<Input> getInputs() {
+        return inputs;
+    }
 }

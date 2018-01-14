@@ -1,0 +1,24 @@
+plugins {
+    id 'com.moowork.node' version '1.1.1'
+}
+
+node {
+    version = '7.8.0'
+    download = true
+}
+
+task cleanFrontend(type: Delete) {
+    delete 'build'
+}
+
+task buildFrontend(type: NpmTask) {
+    args = ['run', 'build']
+    environment 'NODE_ENV': 'production'
+}
+
+task runFrontend(type: NpmTask) {
+    args = ['start']
+}
+
+buildFrontend.dependsOn npmInstall, cleanFrontend
+runFrontend.dependsOn npmInstall
