@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Choice {
-    boolean isCorrect;
-    String text;
-    int index;
+    private boolean isCorrect;
+    private String text;
+    private int index;
 }

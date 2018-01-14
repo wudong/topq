@@ -1,6 +1,9 @@
 package uk.graceliu.topq.model.input;
 
+import lombok.Data;
+
+@Data
 public class Input {
-    public int index;
-    public String correctAnswer;
+    private int index;
+    private String correctAnswer;
 }

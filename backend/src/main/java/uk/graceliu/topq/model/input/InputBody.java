@@ -5,7 +5,7 @@ import uk.graceliu.topq.model.QuestionBody;
 
 import java.util.List;
 
-@Data
+
 public class InputBody implements QuestionBody {
     final private List<Input> inputs;
     final private String text;

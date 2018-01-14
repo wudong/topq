@@ -1,10 +1,13 @@
 package uk.graceliu.topq.model.impl;
 
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import uk.graceliu.topq.model.User;
 
-@Document
+
+@Data
+@Document(collection = "User")
 public class UserImpl implements User{
 
     @Id
