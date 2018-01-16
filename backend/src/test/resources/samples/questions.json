@@ -1,0 +1,35 @@
+[
+  {
+  "body" : {
+    "choices" : [
+      {
+        "index" : 0,
+        "text" : "int [] myList = {\"1\", \"2\", \"3\"};",
+        "isCorrect" : false
+      },
+      {
+        "index" : 1,
+        "text" : "int [] myList = (5, 8, 2);",
+        "isCorrect" : false
+      },
+      {
+        "index" : 3,
+        "text" : "int myList [] [] = {4,9,7,0};",
+        "isCorrect" : false
+      },
+      {
+        "index" : 3,
+        "text" : "int myList [] = {4, 3, 7};",
+        "isCorrect" : true
+      }
+    ],
+    "text" : "Which will legally declare, construct, and initialize an array?"
+  },
+  "meta" : {
+    "difficulity" : 0,
+    "explaination" : "The only legal array declaration and assignment statement is Option D\nOption A is wrong because it initializes an int array with String literals.\nOption B is wrong because it use something other than curly braces for the initialization.\nOption C is wrong because it provides initial values for only one dimension, although the declared array is a two-dimensional array.",
+    "_class" : "meta"
+  },
+  "_class" : "choiceQuestion"
+  }
+]

@@ -53,19 +53,9 @@ public class QuestionRepositoryTest {
 
     public static ChoiceQuestion createTestQuestionInstance() {
 
-        Choice choice1 = new Choice();
-        choice1.setCorrect(true);
-        choice1.setIndex(1);
-        choice1.setText("What's going on?");
-
-        Choice choice2 = new Choice();
-
-        choice2.setCorrect(false);
-        choice2.setIndex(2);
-        choice2.setText("Nothing is wrong");
-
-        ChoiceBody choiceBody = new ChoiceBody(Arrays.asList(choice1, choice2), "When is Grace Birthday?");
-
+        Choice choice1 = new Choice(1, "12/12/1978", false);
+        Choice choice2 = new Choice(2, "25/10/2012", true);
+        ChoiceBody choiceBody = new ChoiceBody("When is Grace Birthday?", Arrays.asList(choice1, choice2) );
         QuestionMeta qm = QuestionMetaImpl.builder().difficulity(1).explaination("No need").build();
 
         ChoiceQuestion choiceQuestion = new ChoiceQuestion(choiceBody, qm);

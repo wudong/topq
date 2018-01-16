@@ -12,18 +12,18 @@ public interface Question<B extends QuestionBody, A extends Answer> {
 
     /**
      * Check if the answer is correctly answered.
-     * @param anser
+     * @param answer
      * @return
      */
-    public abstract boolean check(A anser);
+    public abstract boolean check(A answer);
 
     /**
      * Validate the answer if it is correctly selected/input.
      * For example, for SingleChoiceQuestion, validate the at least one choice is given.
      *
-     * @param anser
+     * @param answer
      */
-    public abstract void validate(A anser);
+    public abstract void validate(A answer);
 
     public B getBody();
 

@@ -8,6 +8,7 @@ import uk.graceliu.topq.model.User;
 
 @Data
 @Document(collection = "User")
+
 public class UserImpl implements User{
 
     @Id
