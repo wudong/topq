@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 public class Choice {
     private int index;
     private String text;
-    private boolean isCorrect;
+    private boolean correct;
 }
