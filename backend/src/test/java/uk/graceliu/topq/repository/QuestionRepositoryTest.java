@@ -52,7 +52,6 @@ public class QuestionRepositoryTest {
     }
 
     public static ChoiceQuestion createTestQuestionInstance() {
-
         Choice choice1 = new Choice(1, "12/12/1978", false);
         Choice choice2 = new Choice(2, "25/10/2012", true);
         ChoiceBody choiceBody = new ChoiceBody("When is Grace Birthday?", Arrays.asList(choice1, choice2) );

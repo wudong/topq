@@ -30,11 +30,39 @@ public class SampleQuestions {
     }
 
     public static ChoiceQuestion sampleChoiceQuestion2() {
-        return null;
+        ChoiceBody choiceBody = ChoiceBody.getInstance(
+                "Which is a reserved word in the Java programming language?",
+                new Choice(0, "method", false ),
+                new Choice(1, "native", true ),
+                new Choice(2, "sublcasses", false ),
+                new Choice(3, "reference", false ),
+                new Choice(3, "volatile", true )
+        );
+
+        QuestionMeta questionMeta = QuestionMetaImpl.builder()
+                .difficulity(0)
+                .build();
+        return ChoiceQuestion.builder().body(choiceBody).meta(questionMeta).build();
     }
 
     public static ChoiceQuestion sampleChoiceQuestion3() {
-        return null;
+        ChoiceBody choiceBody = ChoiceBody.getInstance(
+                "Which one of the following will declare an array and initialize it with five numbers?",
+                new Choice(0, "Array a = new Array(5);", false ),
+                new Choice(1, "int [] a = {23,22,21,20,19};", true ),
+                new Choice(2, "int a [] = new int[5];", false ),
+                new Choice(3, "int [5] array;", false )
+        );
+
+        QuestionMeta questionMeta = QuestionMetaImpl.builder()
+                .explaination(
+                        "Option B is the legal way to declare and initialize an array with five elements.\n" +
+                        "Option A is wrong because it shows an example of instantiating a class named Array, passing the integer value 5 to the object's constructor. If you don't see the brackets, you can be certain there is no actual array object! In other words, an Array object (instance of class Array) is not the same as an array object.\n" +
+                        "Option C is wrong because it shows a legal array declaration, but with no initialization.\n" +
+                        "Option D is wrong (and will not compile) because it declares an array with a size. Arrays must never be given a size when declared.")
+                .difficulity(0)
+                .build();
+        return ChoiceQuestion.builder().body(choiceBody).meta(questionMeta).build();
     }
 
     public static InputQuestion sampleInputQuestion1() {

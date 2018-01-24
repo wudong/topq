@@ -13,7 +13,6 @@ public class ChoiceBody implements QuestionBody {
 
     final private List<Choice> choices;
     final private String text;
-    private static ChoiceBody instance;
 
     public ChoiceBody(String text, List<Choice> choices) {
         this.choices = choices;

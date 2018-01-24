@@ -11,10 +11,10 @@
     "ban": false,
     "class-name": true,
     "comment-format": [
-      true,
+      false,
       "check-space"
     ],
-    "curly": true,
+    "curly": false,
     "eofline": false,
     "forin": true,
     "indent": [ true, "spaces" ],
@@ -25,7 +25,7 @@
     "label-position": true,
     "max-line-length": [ true, 120 ],
     "member-ordering": [
-      true,
+      false,
       "public-before-private",
       "static-before-instance",
       "variables-before-functions"
@@ -43,7 +43,7 @@
       "timeEnd",
       "trace"
     ],
-    "no-consecutive-blank-lines": true,
+    "no-consecutive-blank-lines": false,
     "no-construct": true,
     "no-debugger": true,
     "no-duplicate-variable": true,
@@ -56,13 +56,13 @@
     "no-unused-expression": true,
     "no-use-before-declare": true,
     "one-line": [
-      true,
+      false,
       "check-catch",
       "check-else",
       "check-open-brace",
       "check-whitespace"
     ],
-    "quotemark": [true, "single", "jsx-double"],
+    "quotemark": [false, "single", "jsx-double"],
     "radix": true,
     "semicolon": [true, "always"],
     "switch-default": true,
@@ -76,7 +76,7 @@
       "property-declaration"
     ],
     "typedef-whitespace": [
-      true,
+      false,
       {
         "call-signature": "nospace",
         "index-signature": "nospace",
@@ -87,7 +87,7 @@
     ],
     "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
     "whitespace": [
-      true,
+      false,
       "check-branch",
       "check-decl",
       "check-module",
@@ -96,5 +96,6 @@
       "check-type",
       "check-typecast"
     ]
-  }
+  },
+  "defaultSeverity": "warning"
 }
